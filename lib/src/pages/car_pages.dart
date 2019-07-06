@@ -5,17 +5,22 @@ class CarPage extends StatelessWidget {
   final subTitle = TextStyle(fontSize: 17.0, color: Colors.grey);
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-            _getImage(),
-            _getTitle(),
-            _bottonSection(),
-            _getText(),
-            _getText(),
-            ],
-          ),
-        ),
+        body: Stack(
+          children: <Widget>[
+            _backApp(),
+            SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                _getImage(),
+                _getTitle(),
+                _bottonSection(),
+                _getText(),
+                _getText(),
+                ],
+              ),
+            ),
+           ],
+        )
       );
 
   Widget _getImage() => Container(
@@ -56,7 +61,8 @@ class CarPage extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
       child: Text(
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. sollicitudine viverra odio, vitae imperdiet tortor ex eleifend purus. Etiam efficitur fringilla mi et porttitor. Vivamus erat ligula, laoreet vitae faucibus id, dapibus id lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-        textAlign: TextAlign.justify
+        textAlign: TextAlign.justify,
+        style: TextStyle(color: Colors.white)
       ),
     )
   );
@@ -72,10 +78,26 @@ class CarPage extends StatelessWidget {
 
   Widget _makeBotton(IconData icon, String texto) => Column(
     children: <Widget>[
-      Icon(icon, color: Colors.purple, size: 40.0),
+      Icon(icon, color: Color.fromRGBO(236, 98, 188, 1.0), size: 40.0),
       SizedBox(height: 6.0),
-      Text(texto, style: TextStyle(fontSize: 15.0, color: Colors.purple))
+      Text(texto, style: TextStyle(fontSize: 15.0, color: Color.fromRGBO(241, 142, 172, 1.0)))
     ],
   );
+
+  
+  Widget _backApp() => Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: FractionalOffset(0.0, 0.6),
+          end: FractionalOffset(0.0, 1.0),
+          colors: [
+            Color.fromRGBO(52, 54, 101, 1.0),
+            Color.fromRGBO(35, 37, 57, 1.0)
+          ]
+        )
+      ),
+    );
 
 }
