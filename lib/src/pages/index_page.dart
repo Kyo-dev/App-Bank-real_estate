@@ -54,7 +54,7 @@ class IndexPage extends StatelessWidget {
       // fit: BoxFit.cover
     ),
   );
-    
+
   Widget _backApp() => Container(
       width: double.infinity,
       height: double.infinity,
@@ -70,8 +70,3 @@ class IndexPage extends StatelessWidget {
       ),
     );
 }
-
-
-
-
-

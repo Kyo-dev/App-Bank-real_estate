@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
  
 void main() => runApp(MyApp());
-//red = rgb {237, 27, 36}
-//blue = rgb {24, 70, 158}
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -70,7 +70,7 @@ class CarPage extends StatelessWidget {
   Widget _bottonSection() => Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[
-      _makeBotton(Icons.call, 'CALL'),
+      _makeBotton(Icons.dialpad, 'CALCULADORA'),
       _makeBotton(Icons.near_me, 'ROUTE'),
       _makeBotton(Icons.share, 'SHARE')
     ],
