@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class CarPage extends StatelessWidget {
+class HousePage extends StatelessWidget {  
   final title = TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold);
   final subTitle = TextStyle(fontSize: 17.0, color: Colors.grey);
   @override
@@ -31,7 +31,7 @@ class CarPage extends StatelessWidget {
       fit: BoxFit.cover,
       height: 220.0,
       image: NetworkImage(
-          'https://cdn.motor1.com/images/mgl/XVw3p/s1/maserati-grancabrio-by-pogea-racing.jpg'
+          'https://images.alphacoders.com/435/thumb-1920-435117.jpg'
       )
     )
   );
@@ -86,7 +86,6 @@ class CarPage extends StatelessWidget {
     ],
   );
 
-  
  Widget _backApp() {
     final baseColor = Container(
       width: double.infinity,
@@ -153,6 +152,5 @@ class CarPage extends StatelessWidget {
       ],
     );
   }
-
 
 }

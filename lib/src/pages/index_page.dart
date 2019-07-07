@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class IndexPage extends StatelessWidget {
@@ -26,7 +28,7 @@ class IndexPage extends StatelessWidget {
         child: Center(
           child: RaisedButton(
             shape: StadiumBorder(),
-            color: Color.fromRGBO(236, 98, 188, 1.0),           
+            color:Color.fromRGBO(214,99,255,1),           
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: Text('Bienvenido', style: TextStyle(fontSize: 20.0, color: Colors.white)),
@@ -55,7 +57,8 @@ class IndexPage extends StatelessWidget {
     ),
   );
 
-  Widget _backApp() => Container(
+  Widget _backApp() {
+    final baseColor = Container(
       width: double.infinity,
       height: double.infinity,
       decoration: BoxDecoration(
@@ -69,4 +72,55 @@ class IndexPage extends StatelessWidget {
         )
       ),
     );
+    final boxD1 = Transform.rotate(
+      angle: -pi/5.0,
+      child: Container(
+      height: 320.0,
+      width: 320.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(90.0),
+        gradient: LinearGradient(
+          colors: [
+            Color.fromRGBO(214,99,255,1),
+            Color.fromRGBO(214,99,255,1)
+          ]
+        )
+      ),
+      )
+    );
+
+    final boxD2 = Transform.rotate(
+      angle: -pi/9.0,
+      child: Container(
+      height: 320.0,
+      width: 320.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(90.0),
+        gradient: LinearGradient(
+          colors: [
+            Color.fromRGBO(214,99,255,1),
+            Color.fromRGBO(214,99,255,1)
+          ]
+        )
+      ),
+      )
+    );
+
+
+    return Stack(
+      children: <Widget>[
+        baseColor,
+        Positioned(
+          top: -200,
+          left: -50,
+          child: boxD1
+        ),
+        Positioned(
+          top: 480,
+          left: 200,
+          child: boxD2,
+        )
+      ],
+    );
+  }
 }

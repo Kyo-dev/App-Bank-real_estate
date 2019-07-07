@@ -46,8 +46,8 @@ class MenuPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(90.0),
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(236, 98, 188, 1.0),
-            Color.fromRGBO(241, 142, 172, 1.0)
+            Color.fromRGBO(214,99,255,1),
+            Color.fromRGBO(214,99,255,1)
           ]
         )
       ),
@@ -63,8 +63,8 @@ class MenuPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(90.0),
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(236, 98, 188, 1.0),
-            Color.fromRGBO(241, 142, 172, 1.0)
+            Color.fromRGBO(214,99,255,1),
+            Color.fromRGBO(214,99,255,1)
           ]
         )
       ),
@@ -108,12 +108,12 @@ class MenuPage extends StatelessWidget {
       TableRow(
         children: [
           _makeBottom(Icons.directions_car, Colors.blue, 'Vehículos', context, "/car"),
-          _makeBottom(Icons.home, Colors.green, 'Casas', context, "/car"),
+          _makeBottom(Icons.home, Colors.green, 'Casas', context, "/house"),
         ],
       ),
       TableRow(
         children: [
-          _makeBottom(Icons.location_on, Colors.purple, 'Terrenos',context, "/car"),
+          _makeBottom(Icons.location_on, Colors.purple, 'Terrenos',context, "/terrain"),
           _makeBottom(Icons.euro_symbol, Colors.orange, 'Calculadora',context, "/car"),
         ],
       ),
