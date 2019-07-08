@@ -28,7 +28,7 @@ class IndexPage extends StatelessWidget {
         child: Center(
           child: RaisedButton(
             shape: StadiumBorder(),
-            color:Color.fromRGBO(214,99,255,1),           
+            color: Color.fromRGBO(90,175,204,1),        
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: Text('Bienvenido', style: TextStyle(fontSize: 20.0, color: Colors.white)),

@@ -11,11 +11,11 @@ class _TemplateClass{
       height: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: FractionalOffset(0.0, 0.6),
+          begin: FractionalOffset(0.0, 0.4),
           end: FractionalOffset(0.0, 1.0),
           colors: [
-            Color.fromRGBO(52, 54, 101, 1.0),
-            Color.fromRGBO(35, 37, 57, 1.0)
+            Color.fromRGBO(255, 255, 255, 1.0),
+            Color.fromRGBO(255, 255, 255, 1.0)
           ]
         )
       ),
@@ -29,8 +29,8 @@ class _TemplateClass{
         borderRadius: BorderRadius.circular(90.0),
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(214,99,255,1),
-            Color.fromRGBO(214,99,255,1)
+            Color.fromRGBO(90,175,204,1),
+            Color.fromRGBO(90,175,204,1)
           ]
         )
       ),
@@ -46,8 +46,8 @@ class _TemplateClass{
         borderRadius: BorderRadius.circular(90.0),
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(214,99,255,1),
-            Color.fromRGBO(214,99,255,1)
+            Color.fromRGBO(90,175,204,1),
+            Color.fromRGBO(90,175,204,1)
           ]
         )
       ),

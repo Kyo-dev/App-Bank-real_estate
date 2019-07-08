@@ -1,9 +1,9 @@
 
-import 'dart:ui';
-
 import 'package:app_bank_bienes/src/pages/template/templatePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
+import 'dart:ui';
 
 class MenuPage extends StatelessWidget {
   @override
@@ -15,6 +15,7 @@ class MenuPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               _title(),
+              _carousel(),
               _botonActions(context)
             ],
           ),
@@ -27,7 +28,7 @@ class MenuPage extends StatelessWidget {
     child: Container (
       padding: EdgeInsets.all(20.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Text('Menú principal', style:TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
           SizedBox(height: 10.0),
@@ -41,7 +42,7 @@ class MenuPage extends StatelessWidget {
     children: [
       TableRow(
         children: [
-          _makeBottom(Icons.directions_car, Colors.blue, 'Vehículos', context, "/listCar"),
+          _makeBottom(Icons.directions_car, Colors.brown, 'Vehículos', context, "/listCar"),
           _makeBottom(Icons.home, Colors.green, 'Casas', context, "/house"),
         ],
       ),
@@ -55,10 +56,10 @@ class MenuPage extends StatelessWidget {
   );
 
   Widget _makeBottom(IconData icon, Color color, String nombre, BuildContext context, String direction ) => Container (
-    height: 140.0,
+    height: 130.0,
     margin: EdgeInsets.all(20.0),
     decoration: BoxDecoration(
-      color: Color.fromRGBO(62, 66, 107, 0.7),
+      color: Color.fromRGBO(50, 144, 179, 0.4),
       borderRadius: BorderRadius.circular(20.0)
     ),
     child: Column(
@@ -68,15 +69,14 @@ class MenuPage extends StatelessWidget {
         CircleAvatar(
           backgroundColor: color,
           radius: 25.0,
-          child: Icon(icon, color: Colors.white, size: 30.0),
-          
+          child: Icon(icon, color: Colors.white, size: 28.0),
         ),
         RaisedButton(
           shape: StadiumBorder(),
-          color: Color.fromRGBO(52, 54, 101, 0.2),
+          color: Color.fromRGBO(90,175,204,1),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0), 
-              child: Text(nombre, style: TextStyle(fontSize: 18.0, color: Colors.white)),
+              padding: EdgeInsets.symmetric(horizontal: 0.0), 
+              child: Text(nombre, style: TextStyle(fontSize: 15.0, color: Colors.white)),
             ),
               onPressed: () {
                 Navigator.pushNamed(context, direction);
@@ -86,6 +86,19 @@ class MenuPage extends StatelessWidget {
         SizedBox()
       ],
     ),
+  );
+
+  Widget _carousel() => SizedBox(
+    height: 200.0,
+    width: 500.0,
+    child: Carousel(
+      images: [
+        AssetImage('assets/1.jpg'),
+        AssetImage('assets/2.jpg')
+      ],
+      animationCurve: Curves.fastOutSlowIn,
+      animationDuration: Duration(milliseconds: 2000),
+    )
   );
 
 }
