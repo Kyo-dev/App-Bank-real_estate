@@ -1,0 +1,20 @@
+{
+    "nameApp": "Bank",
+    "routes": [
+        {
+            "route": "listCar",
+            "text":"Car"
+        },
+        {
+            "route": "listTerrain",
+            "text":"Terrain"
+        },
+        {
+            "route": "listHouse",
+            "text":"House"
+        }   
+    ],
+    "listCar":[
+        
+    ]
+}

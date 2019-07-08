@@ -1,6 +1,7 @@
 import 'package:app_bank_bienes/src/pages/car_pages.dart';
 import 'package:app_bank_bienes/src/pages/house_pages.dart';
 import 'package:app_bank_bienes/src/pages/index_page.dart';
+import 'package:app_bank_bienes/src/pages/list_car_pages.dart';
 import 'package:app_bank_bienes/src/pages/menu_page.dart';
 import 'package:app_bank_bienes/src/pages/terrain_pages.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder> {
         '/index': (context) => IndexPage(),
         '/menu': (context) => MenuPage(),
+        '/listCar': (context) => ListCars(),
         '/car': (context) => CarPage(),
         '/house': (context) => HousePage(),
         '/terrain' : (context) => TerrainPage()

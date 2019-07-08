@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:app_bank_bienes/src/pages/template/templatePage.dart';
 import 'package:flutter/material.dart';
 
 class TerrainPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class TerrainPage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         body: Stack(
           children: <Widget>[
-            _backApp(),
+            baseTemplate.backApp(),
             SingleChildScrollView(
               child: Column(
                 children: <Widget>[
@@ -86,74 +87,5 @@ class TerrainPage extends StatelessWidget {
       Text(texto, style: TextStyle(fontSize: 15.0, color: Color.fromRGBO(241, 142, 172, 1.0)))
     ],
   );
-
-  
- Widget _backApp() {
-    final baseColor = Container(
-      width: double.infinity,
-      height: double.infinity,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: FractionalOffset(0.0, 0.6),
-          end: FractionalOffset(0.0, 1.0),
-          colors: [
-            Color.fromRGBO(52, 54, 101, 1.0),
-            Color.fromRGBO(35, 37, 57, 1.0)
-          ]
-        )
-      ),
-    );
-    final boxD1 = Transform.rotate(
-      angle: -pi/5.0,
-      child: Container(
-      height: 320.0,
-      width: 320.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(90.0),
-        gradient: LinearGradient(
-          colors: [
-            Color.fromRGBO(214,99,255,1),
-            Color.fromRGBO(214,99,255,1)
-          ]
-        )
-      ),
-      )
-    );
-
-    final boxD2 = Transform.rotate(
-      angle: -pi/9.0,
-      child: Container(
-      height: 320.0,
-      width: 320.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(90.0),
-        gradient: LinearGradient(
-          colors: [
-            Color.fromRGBO(214,99,255,1),
-            Color.fromRGBO(214,99,255,1)
-          ]
-        )
-      ),
-      )
-    );
-
-
-    return Stack(
-      children: <Widget>[
-        baseColor,
-        Positioned(
-          top: -100,
-          left: -250,
-          child: boxD1
-        ),
-        Positioned(
-          top: 500,
-          left: 300,
-          child: boxD2,
-        )
-      ],
-    );
-  }
-
 
 }
