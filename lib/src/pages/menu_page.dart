@@ -49,7 +49,7 @@ class MenuPage extends StatelessWidget {
       TableRow(
         children: [
           _makeBottom(Icons.location_on, Colors.purple, 'Terrenos',context, "/terrain"),
-          _makeBottom(Icons.euro_symbol, Colors.orange, 'Calculadora',context, "/car"),
+          _makeBottom(Icons.local_atm, Colors.orange, 'Calculadora',context, "/car"),
         ],
       ),
     ],
@@ -89,15 +89,27 @@ class MenuPage extends StatelessWidget {
   );
 
   Widget _carousel() => SizedBox(
-    height: 200.0,
-    width: 500.0,
+     height: 200.0,
+    width: 340.0,
     child: Carousel(
       images: [
         AssetImage('assets/1.jpg'),
         AssetImage('assets/2.jpg')
       ],
+      dotIncreasedColor: Color.fromRGBO(90,175,204,1),
       animationCurve: Curves.fastOutSlowIn,
       animationDuration: Duration(milliseconds: 2000),
+      dotSize: 6.0,
+      dotSpacing: 20.0,
+      // dotColor: Colors.lightGreenAccent,
+      indicatorBgPadding: 7.0,
+      dotBgColor: Color.fromRGBO(90,175,204,0.5),
+      borderRadius: true,
+      // moveIndicatorFromBottom: 200.0,
+      noRadiusForIndicator: true,
+      overlayShadow: true,
+      overlayShadowColors: Colors.white,
+      overlayShadowSize: 0.5,
     )
   );
 

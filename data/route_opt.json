@@ -14,7 +14,72 @@
             "text":"House"
         }   
     ],
-    "listCar":[
-        
+    "listCar": [
+        {
+            "title": "Maserati 01",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs",
+            "price": 10000
+        },
+        {
+            "title": "Maserati 02",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        },
+        {
+            "title": "Maserati 03",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        },
+        {
+            "title": "Maserati 04",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        }
+    ],
+    "listTerain": [
+        {
+            "title": "Maserati 01",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        },
+        {
+            "title": "Maserati 02",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        },
+        {
+            "title": "Maserati 03",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        },
+        {
+            "title": "Maserati 04",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        }
+    ],
+    "listHouse": [
+        {
+            "title": "Maserati 01",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        },
+        {
+            "title": "Maserati 02",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        },
+        {
+            "title": "Maserati 03",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        },
+        {
+            "title": "Maserati 04",
+            "subTitle":"Dos puertas descapotable",
+            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs"
+        }
     ]
+    
 }

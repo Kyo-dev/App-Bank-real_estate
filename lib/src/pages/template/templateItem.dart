@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class _TemplateItem {
   _TemplateItem();
-  final styletitle = TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold);
+  final styletitle = TextStyle(fontSize: 25.0, color: Colors.black, fontWeight: FontWeight.bold);
   final stylesubTitle = TextStyle(fontSize: 17.0, color: Colors.grey);
 
   Widget itemApp(String urlImage, String title, String subTitle, String description) => SingleChildScrollView(
@@ -55,11 +55,11 @@ class _TemplateItem {
   
   Widget _getText(String description) => SafeArea(
     child: Container(
-      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
+      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 5.0),
       child: Text(
         description,
         textAlign: TextAlign.justify,
-        style: TextStyle(color: Colors.white)
+        style: TextStyle(color: Colors.black, fontSize: 16.0)
       ),
     )
   );
@@ -75,12 +75,12 @@ class _TemplateItem {
 
   Widget _makeBotton(IconData icon, String texto) => Column(
     children: <Widget>[
-      Icon(icon, color: Color.fromRGBO(236, 98, 188, 1.0), size: 40.0),
+      Icon(icon, color: Color.fromRGBO(90,175,204,1), size: 40.0),
       SizedBox(height: 6.0),
-      Text(texto, style: TextStyle(fontSize: 15.0, color: Color.fromRGBO(241, 142, 172, 1.0)))
+      Text(texto, style: TextStyle(fontSize: 14.0, color: Color.fromRGBO(90,175,204,1)))
     ],
   );
-
+  
 }
 
 final templateItem = new _TemplateItem();
