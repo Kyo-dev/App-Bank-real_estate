@@ -1,6 +1,7 @@
+import 'package:app_bank_bienes/src/database/db_bank.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
-import 'package:qrcode_reader/qrcode_reader.dart';
+// import 'package:qrcode_reader/qrcode_reader.dart';
 import 'package:flutter/material.dart';
 
 class HousePage extends StatefulWidget {
@@ -35,19 +36,19 @@ class _HousePageState extends State<HousePage> {
   }
 
   Widget _bottomNavigationBar() =>BottomNavigationBar(
-            currentIndex: currendIndex,
-            onTap: (index) {
-              setState(() {
-                currendIndex = index;
-              });
-            },
-            items: [
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.map), title: Text('Mapa')),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.iso), title: Text('Calculadora'))
-            ],
-          );
+    currentIndex: currendIndex,
+    onTap: (index) {
+      setState(() {
+        currendIndex = index;
+      });
+    },
+    items: [
+      BottomNavigationBarItem(
+          icon: Icon(Icons.map), title: Text('Mapa')),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.iso), title: Text('Calculadora'))
+    ],
+  );
 
   Widget _callPage(currentIndex) {
     switch (currentIndex) {
@@ -64,16 +65,18 @@ class _HousePageState extends State<HousePage> {
   _scanQR() async {
 // https://github.com/lKyoto
 // geo:34.98204841631348,135.7508717493164
-    String futureString = '';
-    try {
-      futureString = await new QRCodeReader().scan();
-    } catch (e) {
-      futureString = e.toString();
-    }
-    print('futureString: $futureString');
+    String futureString = 'https://github.com/lKyoto';
+    
+    // try {
+    //   futureString = await new QRCodeReader().scan();
+    // } catch (e) {
+    //   futureString = e.toString();
+    // }
+    // print('futureString: $futureString');
 
     if(futureString != null){
-      print('INFORMATION ');
+      final scan = ScanModel(value: futureString);
+      DBbank.db.insertScan(scan);
     }
   }
 
