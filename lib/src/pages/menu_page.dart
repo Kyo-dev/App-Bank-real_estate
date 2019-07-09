@@ -48,7 +48,7 @@ class MenuPage extends StatelessWidget {
       ),
       TableRow(
         children: [
-          _makeBottom(Icons.location_on, Colors.purple, 'Terrenos',context, "/terrain"),
+          _makeBottom(Icons.location_on, Colors.purple, 'Terrenos',context, "/listCar"),
           _makeBottom(Icons.local_atm, Colors.orange, 'Calculadora',context, "/car"),
         ],
       ),
