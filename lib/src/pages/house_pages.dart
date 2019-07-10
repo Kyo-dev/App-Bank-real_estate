@@ -1,6 +1,9 @@
-import 'package:app_bank_bienes/src/database/db_bank.dart';
+import 'package:app_bank_bienes/src/bloc/scans.dart';
+import 'package:app_bank_bienes/src/models/scan_model.dart';
+// import 'package:app_bank_bienes/src/database/db_bank.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
+import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
 // import 'package:qrcode_reader/qrcode_reader.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +13,8 @@ class HousePage extends StatefulWidget {
 }
 
 class _HousePageState extends State<HousePage> {
+
+  final scansBloc = new ScansBloc();
 
   final title = TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold);
   final subTitle = TextStyle(fontSize: 17.0, color: Colors.grey);
@@ -21,7 +26,10 @@ class _HousePageState extends State<HousePage> {
       appBar: AppBar(
         title: Text('QR Scanner'),
         actions: <Widget>[
-
+          IconButton(
+            icon: Icon(Icons.delete_forever, color: Colors.white),
+            onPressed: scansBloc.deleteAllScans,
+          )
         ],
       ),
           body: _callPage(currendIndex),
@@ -29,7 +37,7 @@ class _HousePageState extends State<HousePage> {
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.filter_center_focus),
-            onPressed: _scanQR,
+            onPressed: ()=> _scanQR(context),
             backgroundColor: Theme.of(context).primaryColor,
           ),
     );
@@ -62,7 +70,7 @@ class _HousePageState extends State<HousePage> {
     }
   }
 
-  _scanQR() async {
+  _scanQR(BuildContext context) async {
 // https://github.com/lKyoto
 // geo:34.98204841631348,135.7508717493164
     String futureString = 'https://github.com/lKyoto';
@@ -75,8 +83,15 @@ class _HousePageState extends State<HousePage> {
     // print('futureString: $futureString');
 
     if(futureString != null){
+      // DBbank.db.insertScan(scan);
       final scan = ScanModel(value: futureString);
-      DBbank.db.insertScan(scan);
+      scansBloc.addScan(scan);
+
+
+      final scan2 = ScanModel(value: 'geo:34.98204841631348,135.7508717493164');
+      scansBloc.addScan(scan2);
+
+      util.openScan(context, scan);
     }
   }
 

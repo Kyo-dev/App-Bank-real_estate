@@ -1,11 +1,16 @@
-import 'package:app_bank_bienes/src/database/db_bank.dart';
+import 'package:app_bank_bienes/src/bloc/scans.dart';
+import 'package:app_bank_bienes/src/models/scan_model.dart';
 import 'package:flutter/material.dart';
+import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
 
 class MapGeolocation extends StatelessWidget {
+
+  final scansBloc = new ScansBloc();
+  
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<ScanModel>>(
-      future:  DBbank.db.getAllScan(),
+    return StreamBuilder<List<ScanModel>>(
+      stream:  scansBloc.scansStream,
       builder: (BuildContext context, AsyncSnapshot<List<ScanModel>>snapshot) {
         if(!snapshot.hasData){
           return Center(child: CircularProgressIndicator());
@@ -19,11 +24,18 @@ class MapGeolocation extends StatelessWidget {
         }
         return ListView.builder(
           itemCount: res.length,
-          itemBuilder: (context, i) => ListTile(
-            leading: Icon(Icons.cloud_queue, color: Theme.of(context).primaryColor),
-            title: Text(res[i].value),
-            trailing: Icon(Icons.keyboard_arrow_right, color: Theme.of(context).primaryColor),
-          )
+          itemBuilder: (context, i) => Dismissible(
+            key: UniqueKey(),
+            background: Container(color: Colors.red),
+            onDismissed: (direction) => scansBloc.deleteScans(res[i].id),
+            child: ListTile(
+              leading: Icon(Icons.cloud_queue, color: Theme.of(context).primaryColor),
+              title: Text(res[i].value),
+              subtitle: Text('ID: ${res[i].id}'),
+              trailing: Icon(Icons.keyboard_arrow_right, color: Theme.of(context).primaryColor),
+              onTap: () => util.openScan(context , res[i]),
+            )
+          ),
         );
       },
     );

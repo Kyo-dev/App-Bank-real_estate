@@ -26,17 +26,12 @@ class IndexPage extends StatelessWidget {
       baseTemplate.backApp(),
       Container (
         child: Center(
-          child: RaisedButton(
-            shape: StadiumBorder(),
-            color: Color.fromRGBO(90,175,204,1),        
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
-              child: Text('Bienvenido', style: TextStyle(fontSize: 20.0, color: Colors.white)),
-            ),
-              onPressed: () {
+          child: IconButton(
+            icon: Icon(Icons.fingerprint, color: Colors.blue, size: 70.0 ,),
+            onPressed: (){
                 Navigator.pushNamed(context, "/menu");
-              }
-          ),
+            },
+          )
         ),
       )
     ],
@@ -47,7 +42,7 @@ class IndexPage extends StatelessWidget {
     height: double.infinity,
     color: Colors.white
   );
- 
+
   Widget _imgGround() => Container (
     // width: double.infinity,
     height: double.infinity,
@@ -58,3 +53,4 @@ class IndexPage extends StatelessWidget {
   );
 
 }
+

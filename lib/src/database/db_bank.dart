@@ -42,7 +42,7 @@ class DBbank{
              'value TEXT '
           ')'
         );
-      }
+      },
     );
   }
 
@@ -121,7 +121,7 @@ class DBbank{
   }
 
 
-  Future<int>deleteScanAll(int id) async {
+  Future<int>deleteScanAll() async {
 
     final db = await database;
 
