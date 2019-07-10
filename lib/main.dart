@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: getAplicationRoutes(),
       theme: ThemeData(
-        primaryColor: Colors.purpleAccent
+        backgroundColor: Color.fromRGBO(255, 255, 255, 1.0),
+        primaryColor:  Color.fromRGBO(90,175,204,1),
       ),
-
     );
   }
 }
