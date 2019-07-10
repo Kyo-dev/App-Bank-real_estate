@@ -4,7 +4,7 @@ import 'package:app_bank_bienes/src/models/scan_model.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
 import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
-// import 'package:qrcode_reader/qrcode_reader.dart';
+import 'package:qrcode_reader/qrcode_reader.dart';
 import 'package:flutter/material.dart';
 
 class HousePage extends StatefulWidget {
@@ -73,14 +73,14 @@ class _HousePageState extends State<HousePage> {
   _scanQR(BuildContext context) async {
 // https://github.com/lKyoto
 // geo:34.98204841631348,135.7508717493164
-    String futureString = 'https://github.com/lKyoto';
+    String futureString;
     
-    // try {
-    //   futureString = await new QRCodeReader().scan();
-    // } catch (e) {
-    //   futureString = e.toString();
-    // }
-    // print('futureString: $futureString');
+    try {
+      futureString = await new QRCodeReader().scan();
+    } catch (e) {
+      futureString = e.toString();
+    }
+    print('futureString: $futureString');
 
     if(futureString != null){
       // DBbank.db.insertScan(scan);
@@ -88,8 +88,8 @@ class _HousePageState extends State<HousePage> {
       scansBloc.addScan(scan);
 
 
-      final scan2 = ScanModel(value: 'geo:34.98204841631348,135.7508717493164');
-      scansBloc.addScan(scan2);
+      // final scan2 = ScanModel(value: 'geo:34.98204841631348,135.7508717493164');
+      // scansBloc.addScan(scan2);
 
       util.openScan(context, scan);
     }
