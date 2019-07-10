@@ -1,3 +1,4 @@
+import 'package:app_bank_bienes/src/bloc/scans.dart';
 import 'package:app_bank_bienes/src/models/scan_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -17,6 +18,7 @@ class _MapaPageState extends State<MapaPage> {
   @override
   Widget build(BuildContext context) {
 
+    ScansBloc().getScans();
     final ScanModel scan = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
