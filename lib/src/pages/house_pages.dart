@@ -2,6 +2,7 @@ import 'package:app_bank_bienes/src/bloc/scans.dart';
 import 'package:app_bank_bienes/src/models/scan_model.dart';
 // import 'package:app_bank_bienes/src/database/db_bank.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
+import 'package:app_bank_bienes/src/pages/car_pages.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
 import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
 import 'package:qrcode_reader/qrcode_reader.dart';
@@ -52,19 +53,18 @@ class _HousePageState extends State<HousePage> {
     },
     items: [
       BottomNavigationBarItem(
-          icon: Icon(Icons.map), title: Text('Mapa')),
+          icon: Icon(Icons.home), title: Text('Propiedad')),
       BottomNavigationBarItem(
-          icon: Icon(Icons.iso), title: Text('Calculadora'))
+          icon: Icon(Icons.map), title: Text('Ubicación'))
     ],
   );
 
   Widget _callPage(currentIndex) {
     switch (currentIndex) {
       case 0:
-        return MapGeolocation();
+        return CarPage();
       case 1:
-        return CalculatorPage();
-
+        return MapGeolocation();
       default:
         return CalculatorPage();
     }

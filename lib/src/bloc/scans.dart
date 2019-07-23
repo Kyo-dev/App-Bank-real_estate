@@ -34,6 +34,11 @@ class ScansBloc with Validators {
     _scansControlloer.sink.add(await DBbank.db.getAllScan());
   }
 
+  
+  getScanById(id)async{
+    _scansControlloer.sink.add(await DBbank.db.getScanById(id));
+  }
+
   deleteScans(int id)async{
     await DBbank.db.deleteScan(id);
     getScans();

@@ -16,7 +16,8 @@ class MenuPage extends StatelessWidget {
             children: <Widget>[
               _title(),
               _carousel(),
-              _botonActions(context)
+              _botonActions(context),
+              _exchangeRate()
             ],
           ),
         )
@@ -26,38 +27,32 @@ class MenuPage extends StatelessWidget {
 
   Widget _title() => SafeArea(
     child: Container (
-      padding: EdgeInsets.all(20.0),
+      padding: EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Text('Menú principal', style:TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
-          SizedBox(height: 10.0),
+          SizedBox(height: 1.0),
           Text('Banco bienes', style: TextStyle(color: Colors.white, fontSize: 20.0)),
         ],
       ),
     )
   );
 
-  Widget _botonActions(BuildContext context) => Table (
+  Widget _botonActions(BuildContext context) => Table(
     children: [
       TableRow(
         children: [
           _makeBottom(Icons.directions_car, Colors.brown, 'Vehículos', context, "/listCar"),
-          _makeBottom(Icons.home, Colors.green, 'Casas', context, "/house"),
-        ],
-      ),
-      TableRow(
-        children: [
-          _makeBottom(Icons.location_on, Colors.purple, 'Terrenos',context, "/listCar"),
-          _makeBottom(Icons.local_atm, Colors.orange, 'Calculadora',context, "/car"),
+          _makeBottom(Icons.home, Colors.green, 'Propiedades', context, "/house"),
         ],
       ),
     ],
   );
 
-  Widget _makeBottom(IconData icon, Color color, String nombre, BuildContext context, String direction ) => Container (
+  Widget _makeBottom(IconData icon, Color color, String nombre, BuildContext context, String direction ) => Container(
     height: 130.0,
-    margin: EdgeInsets.all(20.0),
+    margin: EdgeInsets.all(10.0),
     decoration: BoxDecoration(
       color: Color.fromRGBO(50, 144, 179, 0.4),
       borderRadius: BorderRadius.circular(20.0)
@@ -94,7 +89,8 @@ class MenuPage extends StatelessWidget {
     child: Carousel(
       images: [
         AssetImage('assets/1.jpg'),
-        AssetImage('assets/2.jpg')
+        AssetImage('assets/2.jpg'),
+        AssetImage('assets/3.jpg')
       ],
       dotIncreasedColor: Color.fromRGBO(90,175,204,1),
       animationCurve: Curves.fastOutSlowIn,
@@ -113,4 +109,22 @@ class MenuPage extends StatelessWidget {
     )
   );
 
+  Widget _exchangeRate() => SafeArea(
+    child: Container (
+      padding: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+      color: Color.fromRGBO(50, 144, 179, 0.4),
+      borderRadius: BorderRadius.circular(20.0)
+    ),
+      child: Column(
+        children: <Widget>[
+           Text('Tipo de cambio', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+           SizedBox(height: 2.0),
+           Text('Compra       	  Venta', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+           SizedBox(height: 2.0),
+           Text('    581,72            588,06  ', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+        ],
+      ),
+    )
+  );
 }

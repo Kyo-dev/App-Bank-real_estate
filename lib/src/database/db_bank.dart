@@ -63,14 +63,17 @@ class DBbank{
 
   //GET BY ID
 
-  Future <ScanModel>getScanById(int id) async {
+  Future<List<ScanModel>>getScanById(int id) async {
 
     final db = await database;
 
     final res = await db.query('Scans', where: 'id = ?', whereArgs: [id]);
+      //  final res = await db.rawQuery("SELECT * FROM Scans WHERE id = '$id'");
 
-    return res.isNotEmpty ? ScanModel.fromJson(res.first) : null;
-
+    List<ScanModel> list = res.isNotEmpty 
+                         ? ScanModel.fromJson(res.first) 
+                         : [];
+    return list;
   }
 
   Future<List<ScanModel>>getAllScan() async{
@@ -83,7 +86,7 @@ class DBbank{
                          ? res.map((c) => ScanModel.fromJson(c)).toList()
                          :[];
     return list;
-
+    
   }
 
    Future<List<ScanModel>>getAllTypeScan(String type) async{
