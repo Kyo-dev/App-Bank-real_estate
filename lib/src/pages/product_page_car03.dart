@@ -1,19 +1,17 @@
 import 'package:app_bank_bienes/src/bloc/scans.dart';
-import 'package:app_bank_bienes/src/models/scan_model.dart';
-// import 'package:app_bank_bienes/src/database/db_bank.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
-import 'package:app_bank_bienes/src/pages/car_pages.dart';
+import 'package:app_bank_bienes/src/pages/car_pages03.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
-import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
-import 'package:qrcode_reader/qrcode_reader.dart';
+// import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
-class HousePage extends StatefulWidget {
+class ProductPage03 extends StatefulWidget {
   @override
-  _HousePageState createState() => _HousePageState();
+  ProductPageState createState() => ProductPageState();
 }
 
-class _HousePageState extends State<HousePage> {
+class ProductPageState extends State<ProductPage03> {
 
   final scansBloc = new ScansBloc();
 
@@ -25,20 +23,20 @@ class _HousePageState extends State<HousePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('QR Scanner'),
+        title: Text('Regresar',style: TextStyle(fontSize: 25.0, color: Colors.white)),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.delete_forever, color: Colors.white),
-            onPressed: scansBloc.deleteAllScans,
-          )
+          // IconButton(
+          //   icon: Icon(Icons.delete_forever, color: Colors.white),
+          //   onPressed: scansBloc.deleteAllScans,
+          // )
         ],
       ),
           body: _callPage(currendIndex),
           bottomNavigationBar: _bottomNavigationBar(),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.filter_center_focus),
-            onPressed: ()=> _scanQR(context),
+            child: Icon(Icons.share),
+            onPressed: ()=> Share.share('https://www.facebook.com/BancoBCR/'),
             backgroundColor: Theme.of(context).primaryColor,
           ),
     );
@@ -62,7 +60,7 @@ class _HousePageState extends State<HousePage> {
   Widget _callPage(currentIndex) {
     switch (currentIndex) {
       case 0:
-        return CarPage();
+        return CarPage03();
       case 1:
         return MapGeolocation();
       default:
@@ -70,29 +68,29 @@ class _HousePageState extends State<HousePage> {
     }
   }
 
-  _scanQR(BuildContext context) async {
-// https://github.com/lKyoto
-// geo:34.98204841631348,135.7508717493164
-    String futureString;
+//   _scanQR(BuildContext context) async {
+// // https://github.com/lKyoto
+// // geo:34.98204841631348,135.7508717493164
+//     String futureString;
     
-    try {
-      futureString = await new QRCodeReader().scan();
-    } catch (e) {
-      futureString = e.toString();
-    }
-    print('futureString: $futureString');
+//     try {
+//       futureString = await new QRCodeReader().scan();
+//     } catch (e) {
+//       futureString = e.toString();
+//     }
+//     print('futureString: $futureString');
 
-    if(futureString != null){
-      // DBbank.db.insertScan(scan);
-      final scan = ScanModel(value: futureString);
-      scansBloc.addScan(scan);
+//     if(futureString != null){
+//       // DBbank.db.insertScan(scan);
+//       final scan = ScanModel(value: futureString);
+//       scansBloc.addScan(scan);
 
 
-      // final scan2 = ScanModel(value: 'geo:34.98204841631348,135.7508717493164');
-      // scansBloc.addScan(scan2);
+//       // final scan2 = ScanModel(value: 'geo:34.98204841631348,135.7508717493164');
+//       // scansBloc.addScan(scan2);
 
-      util.openScan(context, scan);
-    }
-  }
+//       util.openScan(context, scan);
+//     }
+//   }
 
 }

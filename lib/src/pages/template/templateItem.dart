@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class _TemplateItem {
 
   _TemplateItem();
-  final styletitle = TextStyle(fontSize: 25.0, color: Colors.black, fontWeight: FontWeight.bold);
-  final stylesubTitle = TextStyle(fontSize: 17.0, color: Colors.grey);
+  final styletitle = TextStyle(fontSize: 30.0, color: Colors.black, fontWeight: FontWeight.bold);
+  final stylesubTitle = TextStyle(fontSize: 17.0, color: Colors.purple, fontWeight: FontWeight.bold);
     // final scansBloc = new ScansBloc();
 
   Widget itemApp(String urlImage, String title, String subTitle, String description, BuildContext context, double price) => SingleChildScrollView(
@@ -26,7 +26,7 @@ class _TemplateItem {
       fit: BoxFit.cover,
       height: 200.0,
       image: NetworkImage(
-          urlIamge = 'https://cdn.motor1.com/images/mgl/XVw3p/s1/maserati-grancabrio-by-pogea-racing.jpg'
+          urlIamge = urlIamge
       )
     )
   );
@@ -48,8 +48,8 @@ class _TemplateItem {
               ],
             ),
           ),
-          Icon(Icons.star, color: Colors.red, size: 17.0),
-          Text('69', style: TextStyle(fontSize: 17.0))
+          // Icon(Icons.star, color: Colors.red, size: 17.0),
+          // Text('69', style: TextStyle(fontSize: 17.0))
         ],
       ),
     )
@@ -61,7 +61,7 @@ class _TemplateItem {
       child: Text(
         description,
         textAlign: TextAlign.justify,
-        style: TextStyle(color: Colors.black, fontSize: 15.0)
+        style: TextStyle(color: Colors.black, fontSize: 17.0)
       ),
     )
   ); 

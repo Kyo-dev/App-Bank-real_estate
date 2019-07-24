@@ -14,8 +14,8 @@ class _TemplateClass{
           begin: FractionalOffset(0.0, 0.4),
           end: FractionalOffset(0.0, 1.0),
           colors: [
-            Color.fromRGBO(255, 255, 255, 1.0),
-            Color.fromRGBO(255, 255, 255, 1.0)
+            Color.fromRGBO(225, 255, 255, 0.5),
+            Color.fromRGBO(255, 255, 255, 0.5)            
           ]
         )
       ),
@@ -29,8 +29,8 @@ class _TemplateClass{
         borderRadius: BorderRadius.circular(90.0),
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(90,175,204,1),
-            Color.fromRGBO(90,175,204,1)
+            Color.fromRGBO(100, 26, 107,1),
+            Color.fromRGBO(201,64,138,1)
           ]
         )
       ),
@@ -46,8 +46,8 @@ class _TemplateClass{
         borderRadius: BorderRadius.circular(90.0),
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(90,175,204,1),
-            Color.fromRGBO(90,175,204,1)
+            Color.fromRGBO(100, 26, 107,1),
+            Color.fromRGBO(201,64,138,1)
           ]
         )
       ),

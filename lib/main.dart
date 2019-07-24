@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: getAplicationRoutes(),
       theme: ThemeData(
-        backgroundColor: Color.fromRGBO(255, 255, 255, 1.0),
-        primaryColor:  Color.fromRGBO(90,175,204,1),
+        backgroundColor: Color.fromRGBO(163, 157, 160, 1.0),
+        primaryColor:  Color.fromRGBO(100, 26, 107,1),
       ),
     );
   }

@@ -1,46 +1,47 @@
-import 'package:app_bank_bienes/src/pages/providers/routes.dart';
 import 'package:app_bank_bienes/src/pages/template/templatePage.dart';
 import 'package:flutter/material.dart';
 
 class ListCars extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(
+      backgroundColor: Color.fromRGBO(100, 26, 107,1),
+      title: Text('Volver al menú principal',style: TextStyle(fontSize: 25.0, color: Colors.white))
+    ),
     body: Stack(
       children: <Widget>[
         baseTemplate.backApp(),
-        _list()
+        listItems(context)        
       ],
     ),
   );
 
-  Widget _list() => FutureBuilder(
-    future: routeProvider.loadData(),
-    initialData: [],
-    builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot){
-      return ListView(
-        children: _listCar(snapshot.data, context)
-      );
-    }
-  );
-  
-
-  List<Widget>_listCar(List<dynamic> data, BuildContext context)  {
-
-    final List<Widget> items = [];
-    data.forEach((opt){
-    final widgetTemp = ListTile(
-      title: Text(opt['text']),
-      leading: Icon(Icons.directions_car),
-      trailing: Icon(Icons.keyboard_arrow_right),
-      onTap: (){
-        Navigator.pushNamed(context, opt['routes']);
-      },
-    );
-    items..add(widgetTemp)
-         ..add(Divider());
-
-    });
-    return items;
-  }
-  
+Widget listItems(BuildContext context) => ListView(
+    children: <Widget>[
+      ListTile(
+        title: Text('Maserati Grancabrio' ,style: TextStyle(fontSize: 20.0, color: Colors.white)),
+        subtitle: Text('308.000\$' ,style: TextStyle(fontSize: 15.0, color: Colors.white)),
+        onTap: (){
+          Navigator.pushNamed(context, '/car01');
+        },
+      ),
+      Divider(),
+      ListTile(
+        title: Text('Toyota', style: TextStyle(fontSize: 20.0, color: Colors.white)),
+        subtitle: Text('2.900\$', style: TextStyle(fontSize: 15.0, color: Colors.white)),
+         onTap: (){
+          Navigator.pushNamed(context, '/car02' );
+        },
+      ),
+      Divider(),
+      ListTile(
+        title: Text('Volkswagen', style: TextStyle(fontSize: 20.0, color: Colors.white)),
+        subtitle: Text('22.500\$', style: TextStyle(fontSize: 15.0, color: Colors.white)),
+         onTap: (){
+          Navigator.pushNamed(context, '/car03' );
+        },
+      ),
+      Divider()
+    ],
+  ); 
 }

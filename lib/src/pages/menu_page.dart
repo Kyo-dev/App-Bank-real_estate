@@ -31,9 +31,9 @@ class MenuPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Text('Menú principal', style:TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
+          Text('Banco Bienes', style:TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
           SizedBox(height: 1.0),
-          Text('Banco bienes', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+          Text('Menú principal', style: TextStyle(color: Colors.white, fontSize: 20.0)),
         ],
       ),
     )
@@ -44,7 +44,7 @@ class MenuPage extends StatelessWidget {
       TableRow(
         children: [
           _makeBottom(Icons.directions_car, Colors.brown, 'Vehículos', context, "/listCar"),
-          _makeBottom(Icons.home, Colors.green, 'Propiedades', context, "/house"),
+          _makeBottom(Icons.home, Colors.green, 'Propiedades', context, "/listTerrain"),
         ],
       ),
     ],
@@ -54,7 +54,12 @@ class MenuPage extends StatelessWidget {
     height: 130.0,
     margin: EdgeInsets.all(10.0),
     decoration: BoxDecoration(
-      color: Color.fromRGBO(50, 144, 179, 0.4),
+     gradient: LinearGradient(
+          colors: [
+            Color.fromRGBO(100, 26, 107,1),
+            Color.fromRGBO(201,64,138,1)
+          ]
+        ),
       borderRadius: BorderRadius.circular(20.0)
     ),
     child: Column(
@@ -68,7 +73,7 @@ class MenuPage extends StatelessWidget {
         ),
         RaisedButton(
           shape: StadiumBorder(),
-          color: Color.fromRGBO(90,175,204,1),
+          color: Color.fromRGBO(100, 26, 107,1),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 0.0), 
               child: Text(nombre, style: TextStyle(fontSize: 15.0, color: Colors.white)),
@@ -92,14 +97,14 @@ class MenuPage extends StatelessWidget {
         AssetImage('assets/2.jpg'),
         AssetImage('assets/3.jpg')
       ],
-      dotIncreasedColor: Color.fromRGBO(90,175,204,1),
+      dotIncreasedColor: Color.fromRGBO(201,64,138,1),
       animationCurve: Curves.fastOutSlowIn,
       animationDuration: Duration(milliseconds: 2000),
       dotSize: 6.0,
       dotSpacing: 20.0,
       // dotColor: Colors.lightGreenAccent,
       indicatorBgPadding: 7.0,
-      dotBgColor: Color.fromRGBO(90,175,204,0.5),
+      dotBgColor: Color.fromRGBO(100, 26, 107,1),
       borderRadius: true,
       // moveIndicatorFromBottom: 200.0,
       noRadiusForIndicator: true,
@@ -113,16 +118,16 @@ class MenuPage extends StatelessWidget {
     child: Container (
       padding: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-      color: Color.fromRGBO(50, 144, 179, 0.4),
+      color: Color.fromRGBO(100, 26, 107,1),
       borderRadius: BorderRadius.circular(20.0)
     ),
       child: Column(
         children: <Widget>[
-           Text('Tipo de cambio', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+           Text('Tipo de cambio', style: TextStyle(color: Colors.white, fontSize: 20.0)),
            SizedBox(height: 2.0),
-           Text('Compra       	  Venta', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+           Text('Compra       	  Venta', style: TextStyle(color: Colors.white, fontSize: 20.0)),
            SizedBox(height: 2.0),
-           Text('    581,72            588,06  ', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+           Text('    581,72            588,06  ', style: TextStyle(color: Colors.white, fontSize: 20.0)),
         ],
       ),
     )

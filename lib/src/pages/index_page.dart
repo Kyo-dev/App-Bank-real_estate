@@ -27,7 +27,7 @@ class IndexPage extends StatelessWidget {
       Container (
         child: Center(
           child: IconButton(
-            icon: Icon(Icons.fingerprint, color: Colors.blue, size: 70.0 ,),
+            icon: Icon(Icons.fingerprint, color: Color.fromRGBO(100, 26, 107,1) , size: 70.0 ,),
             onPressed: (){
                 Navigator.pushNamed(context, "/menu");
             },
@@ -40,14 +40,16 @@ class IndexPage extends StatelessWidget {
   Widget _backColor() => Container(
     width: double.infinity,
     height: double.infinity,
-    color: Colors.white
+    color: Color.fromRGBO(100, 26, 107,1)
+    
   );
 
   Widget _imgGround() => Container (
     // width: double.infinity,
     height: double.infinity,
+    
     child: Image(
-      image: AssetImage('assets/bcr-thumb.png'),
+      image: AssetImage('assets/logoPrincipal.png'),
       // fit: BoxFit.cover
     ),
   );
