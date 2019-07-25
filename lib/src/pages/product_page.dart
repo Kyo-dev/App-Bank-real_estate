@@ -2,6 +2,7 @@ import 'package:app_bank_bienes/src/bloc/scans.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
 import 'package:app_bank_bienes/src/pages/car_pages.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
+import 'package:app_bank_bienes/src/pages/mapGeolocation02.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
@@ -65,7 +66,7 @@ class ProductPageState extends State<ProductPage> {
       case 0:
         return CarPage();
       case 1:
-        return MapGeolocation();
+        return MapGeolocation02();
       default:
         return CalculatorPage();
     }

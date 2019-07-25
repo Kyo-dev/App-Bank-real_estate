@@ -3,6 +3,7 @@ import 'package:app_bank_bienes/src/bloc/scans.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
 import 'package:app_bank_bienes/src/pages/car_pages02.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
+import 'package:app_bank_bienes/src/pages/mapGeolocation02.dart';
 // import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
 // import 'package:qrcode_reader/qrcode_reader.dart';
 import 'package:flutter/material.dart';

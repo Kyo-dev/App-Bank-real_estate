@@ -7,7 +7,9 @@ import 'package:app_bank_bienes/src/pages/menu_page.dart';
 import 'package:app_bank_bienes/src/pages/product_page.dart';
 import 'package:app_bank_bienes/src/pages/product_page_car02.dart';
 import 'package:app_bank_bienes/src/pages/product_page_car03.dart';
-import 'package:app_bank_bienes/src/pages/terrain_pages.dart';
+import 'package:app_bank_bienes/src/pages/product_page_t01.dart';
+import 'package:app_bank_bienes/src/pages/product_page_t02.dart';
+
 import 'package:flutter/material.dart';
 
 Map<String, WidgetBuilder>getAplicationRoutes() =>(
@@ -25,7 +27,8 @@ Map<String, WidgetBuilder>getAplicationRoutes() =>(
     '/car02' : (context) => ProductPage02(),
     '/car03' : (context) => ProductPage03(),
 
-    '/terrain' :(context) => TerrainPage(),
+    '/terrain01': (context) => ProductPageT01(),
+    '/terrain02': (context) => ProductPageT02(),
 
     '/map' : (context) => MapGeolocation(),
     'mapa' : (context) => MapaPage()

@@ -1,22 +1,20 @@
 import 'package:app_bank_bienes/src/bloc/scans.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
-import 'package:app_bank_bienes/src/pages/car_pages03.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
-import 'package:app_bank_bienes/src/pages/mapGeolocation03.dart';
-// import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
+import 'package:app_bank_bienes/src/pages/mapGeolocationT01.dart';
+import 'package:app_bank_bienes/src/pages/terrain_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
-class ProductPage03 extends StatefulWidget {
+class ProductPageT01 extends StatefulWidget {
   @override
   ProductPageState createState() => ProductPageState();
 }
 
-class ProductPageState extends State<ProductPage03> {
+class ProductPageState extends State<ProductPageT01> {
 
   final scansBloc = new ScansBloc();
-
-  final title = TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold);
+  final title = TextStyle(fontSize: 25.0, color: Colors.black, fontWeight: FontWeight.bold);
   final subTitle = TextStyle(fontSize: 17.0, color: Colors.grey);
   int currendIndex = 0;
 
@@ -35,6 +33,11 @@ class ProductPageState extends State<ProductPage03> {
           body: _callPage(currendIndex),
           bottomNavigationBar: _bottomNavigationBar(),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          // floatingActionButton: FloatingActionButton(
+          //   child: Icon(Icons.filter_center_focus),
+          //   onPressed: ()=> _scanQR(context),
+          //   backgroundColor: Theme.of(context).primaryColor,
+          // ),
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.share),
             onPressed: ()=> Share.share('https://www.facebook.com/BancoBCR/'),
@@ -61,9 +64,9 @@ class ProductPageState extends State<ProductPage03> {
   Widget _callPage(currentIndex) {
     switch (currentIndex) {
       case 0:
-        return CarPage03();
+        return TerrainPage();
       case 1:
-        return MapGeolocation03();
+        return MapGeolocationT01();
       default:
         return CalculatorPage();
     }

@@ -3,7 +3,7 @@ import 'package:app_bank_bienes/src/models/scan_model.dart';
 import 'package:flutter/material.dart';
 import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
 
-class MapGeolocation extends StatelessWidget {
+class MapGeolocationT01 extends StatelessWidget {
 
   final scansBloc = new ScansBloc();
   
@@ -31,10 +31,10 @@ class MapGeolocation extends StatelessWidget {
             onDismissed: (direction) => scansBloc.deleteScans(res[i].id),
             child: ListTile(
               leading: Icon(Icons.cloud_queue, color: Theme.of(context).primaryColor),
-              title: Text(res[0].value),
+              title: Text(res[3].value),
               // subtitle: Text('ID: ${res[i].id}'),
               trailing: Icon(Icons.keyboard_arrow_right, color: Theme.of(context).primaryColor),
-              onTap: () => util.openScan(context , res[0]),
+              onTap: () => util.openScan(context , res[3]),
             )
           ),
         );

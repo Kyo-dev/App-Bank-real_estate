@@ -123,11 +123,11 @@ class MenuPage extends StatelessWidget {
     ),
       child: Column(
         children: <Widget>[
-           Text('Tipo de cambio', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+           Text('Tipo de cambio del dolar \$', style: TextStyle(color: Colors.white, fontSize: 20.0)),
            SizedBox(height: 2.0),
            Text('Compra       	  Venta', style: TextStyle(color: Colors.white, fontSize: 20.0)),
            SizedBox(height: 2.0),
-           Text('    581,72            588,06  ', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+           Text('    581.72            588.06  ', style: TextStyle(color: Colors.white, fontSize: 20.0)),
         ],
       ),
     )

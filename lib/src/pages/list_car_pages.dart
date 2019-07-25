@@ -19,24 +19,27 @@ class ListCars extends StatelessWidget {
 Widget listItems(BuildContext context) => ListView(
     children: <Widget>[
       ListTile(
-        title: Text('Maserati Grancabrio' ,style: TextStyle(fontSize: 20.0, color: Colors.white)),
-        subtitle: Text('308.000\$' ,style: TextStyle(fontSize: 15.0, color: Colors.white)),
+        title: Text('Maserati Grancabrio' ,style: TextStyle(fontSize: 25.0, color: Colors.black)),
+        subtitle: Text('308.000\$' ,style: TextStyle(fontSize: 20.0, color: Colors.black)),
+        trailing: Icon(Icons.keyboard_arrow_right, color: Theme.of(context).primaryColor),
         onTap: (){
           Navigator.pushNamed(context, '/car01');
         },
       ),
       Divider(),
       ListTile(
-        title: Text('Toyota', style: TextStyle(fontSize: 20.0, color: Colors.white)),
-        subtitle: Text('2.900\$', style: TextStyle(fontSize: 15.0, color: Colors.white)),
+        title: Text('Toyota', style: TextStyle(fontSize: 25.0, color: Colors.black)),
+        subtitle: Text('2.900\$', style: TextStyle(fontSize: 20.0, color: Colors.black)),
+        trailing: Icon(Icons.keyboard_arrow_right, color: Theme.of(context).primaryColor),
          onTap: (){
           Navigator.pushNamed(context, '/car02' );
         },
       ),
       Divider(),
       ListTile(
-        title: Text('Volkswagen', style: TextStyle(fontSize: 20.0, color: Colors.white)),
-        subtitle: Text('22.500\$', style: TextStyle(fontSize: 15.0, color: Colors.white)),
+        title: Text('Volkswagen', style: TextStyle(fontSize: 25.0, color: Colors.black)),
+        subtitle: Text('22.500\$', style: TextStyle(fontSize: 20.0, color: Colors.black)),
+        trailing: Icon(Icons.keyboard_arrow_right, color: Theme.of(context).primaryColor),
          onTap: (){
           Navigator.pushNamed(context, '/car03' );
         },

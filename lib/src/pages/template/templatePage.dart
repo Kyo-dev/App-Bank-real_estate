@@ -21,7 +21,7 @@ class _TemplateClass{
       ),
     );
     final boxD1 = Transform.rotate(
-      angle: -pi/5.0,
+      angle: -pi/4.0,
       child: Container(
       height: 320.0,
       width: 320.0,
@@ -29,8 +29,8 @@ class _TemplateClass{
         borderRadius: BorderRadius.circular(90.0),
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(100, 26, 107,1),
-            Color.fromRGBO(201,64,138,1)
+            Color.fromRGBO(201,64,138,1),
+            Color.fromRGBO(100, 26, 107,1)
           ]
         )
       ),
