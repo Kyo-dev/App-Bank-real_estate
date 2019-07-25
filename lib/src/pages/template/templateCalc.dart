@@ -1,22 +1,18 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class _TemplateCalc{
-//   _TemplateCalc();
+class _TemplateCalc{
+  _TemplateCalc();
 
+  // Widget calc(int month, double price, double tax){
+  //   double aux = (price/month) * tax;
+  // }
 
-
-
-//   Widget calc(double price, double discount){
-//     double aux = (discount/100) * price;
-
-//   }
-
-//   Widget txtPrice() => TextField(
-//   obscureText: true,
-//   decoration: InputDecoration(
-//     border: OutlineInputBorder(),
-//     labelText: 'Password',
-//   ),
-// );
-// }
-// final templateCalc = new _TemplateCalc();
+  Widget txtPrice() => TextField(
+  obscureText: true,
+  decoration: InputDecoration(
+    border: OutlineInputBorder(),
+    // labelText: '',
+  ),
+);
+}
+final templateCalc = new _TemplateCalc();

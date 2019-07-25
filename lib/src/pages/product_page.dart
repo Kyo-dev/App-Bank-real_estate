@@ -1,7 +1,6 @@
 import 'package:app_bank_bienes/src/bloc/scans.dart';
-import 'package:app_bank_bienes/src/pages/calculator.dart';
 import 'package:app_bank_bienes/src/pages/car_pages.dart';
-import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
+// import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocation02.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
@@ -21,13 +20,14 @@ class ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+       appBar: AppBar(
         title: Text('Regresar',style: TextStyle(fontSize: 25.0, color: Colors.white)),
         actions: <Widget>[
-          // IconButton(
-          //   icon: Icon(Icons.delete_forever, color: Colors.white),
-          //   onPressed: scansBloc.deleteAllScans,
-          // )
+          IconButton(
+            icon: Icon(Icons.share, color: Colors.white),
+            onPressed: ()=> Share.share('https://www.facebook.com/BancoBCR/'),
+            
+          )
         ],
       ),
           body: _callPage(currendIndex),
@@ -39,8 +39,8 @@ class ProductPageState extends State<ProductPage> {
           //   backgroundColor: Theme.of(context).primaryColor,
           // ),
           floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.share),
-            onPressed: ()=> Share.share('https://www.facebook.com/BancoBCR/'),
+           child:  Icon(Icons.iso),
+            onPressed: ()=> {},
             backgroundColor: Theme.of(context).primaryColor,
           ),
     );
@@ -68,7 +68,7 @@ class ProductPageState extends State<ProductPage> {
       case 1:
         return MapGeolocation02();
       default:
-        return CalculatorPage();
+        return CarPage();
     }
   }
 

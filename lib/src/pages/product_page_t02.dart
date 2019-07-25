@@ -1,14 +1,14 @@
 import 'package:app_bank_bienes/src/bloc/scans.dart';
-import 'package:app_bank_bienes/src/models/scan_model.dart';
+// import 'package:app_bank_bienes/src/models/scan_model.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
-import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
+// import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocationT02.dart';
 import 'package:app_bank_bienes/src/pages/terrain_pages02.dart';
 import 'package:flutter/material.dart';
 
-import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
+// import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
 
-import 'package:qrcode_reader/qrcode_reader.dart';
+// import 'package:qrcode_reader/qrcode_reader.dart';
 import 'package:share/share.dart';
 
 class ProductPageT02 extends StatefulWidget {
@@ -30,8 +30,9 @@ class ProductPageState extends State<ProductPageT02> {
         title: Text('Regresar',style: TextStyle(fontSize: 25.0, color: Colors.white)),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.delete_forever, color: Colors.white),
-            onPressed: scansBloc.deleteAllScans,
+            icon: Icon(Icons.share, color: Colors.white),
+            onPressed: ()=> Share.share('https://www.facebook.com/BancoBCR/'),
+            
           )
         ],
       ),
@@ -44,8 +45,8 @@ class ProductPageState extends State<ProductPageT02> {
           //   backgroundColor: Theme.of(context).primaryColor,
           // ),
           floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.share),
-            onPressed: ()=> Share.share('https://www.facebook.com/BancoBCR/'),
+           child:  Icon(Icons.iso),
+            onPressed: ()=> {},
             backgroundColor: Theme.of(context).primaryColor,
           ),
     );

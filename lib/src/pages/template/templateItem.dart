@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+
 class _TemplateItem {
 
   _TemplateItem();
   final styletitle = TextStyle(fontSize: 30.0, color: Colors.black, fontWeight: FontWeight.bold);
   final stylesubTitle = TextStyle(fontSize: 17.0, color: Colors.purple, fontWeight: FontWeight.bold);
-    // final scansBloc = new ScansBloc();
 
+    // final scansBloc = new ScansBloc();
   Widget itemApp(String urlImage, String title, String subTitle, String description, BuildContext context, double price) => SingleChildScrollView(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -14,8 +15,6 @@ class _TemplateItem {
       _getImage(urlImage),
       _getTitle(title, subTitle),
       _getText(description),
-      // _calc(price),
-      // _getMap(context)
       ],
     ),
   );
@@ -65,7 +64,7 @@ class _TemplateItem {
       ),
     )
   ); 
-
+  
 }
 
 final templateItem = new _TemplateItem();
