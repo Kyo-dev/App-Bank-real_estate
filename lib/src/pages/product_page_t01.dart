@@ -1,7 +1,7 @@
 import 'package:app_bank_bienes/src/bloc/scans.dart';
-import 'package:app_bank_bienes/src/pages/calculator.dart';
 // import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocationT01.dart';
+import 'package:app_bank_bienes/src/pages/template/templateCalc.dart';
 import 'package:app_bank_bienes/src/pages/terrain_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
@@ -39,11 +39,11 @@ class ProductPageState extends State<ProductPageT01> {
           //   onPressed: ()=> _scanQR(context),
           //   backgroundColor: Theme.of(context).primaryColor,
           // ),
-          floatingActionButton: FloatingActionButton(
-           child:  Icon(Icons.iso),
-            onPressed: ()=> {},
-            backgroundColor: Theme.of(context).primaryColor,
-          ),
+          // floatingActionButton: FloatingActionButton(
+          //  child:  Icon(Icons.iso),
+          //   onPressed: ()=> {},
+          //   backgroundColor: Theme.of(context).primaryColor,
+          // ),
     );
   }
 
@@ -58,6 +58,8 @@ class ProductPageState extends State<ProductPageT01> {
       BottomNavigationBarItem(
           icon: Icon(Icons.home), title: Text('Propiedad')),
       BottomNavigationBarItem(
+          icon: Icon(Icons.iso), title: Text('Calculadora')),
+      BottomNavigationBarItem(
           icon: Icon(Icons.map), title: Text('Ubicación'))
     ],
   );
@@ -67,9 +69,11 @@ class ProductPageState extends State<ProductPageT01> {
       case 0:
         return TerrainPage();
       case 1:
+        return MyHomePage();
+      case 2:
         return MapGeolocationT01();
       default:
-        return CalculatorPage();
+        return TerrainPage();
     }
   }
 

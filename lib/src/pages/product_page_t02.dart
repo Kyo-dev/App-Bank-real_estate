@@ -3,6 +3,7 @@ import 'package:app_bank_bienes/src/bloc/scans.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
 // import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocationT02.dart';
+import 'package:app_bank_bienes/src/pages/template/templateCalc.dart';
 import 'package:app_bank_bienes/src/pages/terrain_pages02.dart';
 import 'package:flutter/material.dart';
 
@@ -44,11 +45,11 @@ class ProductPageState extends State<ProductPageT02> {
           //   onPressed: ()=> _scanQR(context),
           //   backgroundColor: Theme.of(context).primaryColor,
           // ),
-          floatingActionButton: FloatingActionButton(
-           child:  Icon(Icons.iso),
-            onPressed: ()=> {},
-            backgroundColor: Theme.of(context).primaryColor,
-          ),
+          // floatingActionButton: FloatingActionButton(
+          //  child:  Icon(Icons.iso),
+          //   onPressed: ()=> {},
+          //   backgroundColor: Theme.of(context).primaryColor,
+          // ),
     );
   }
 
@@ -63,6 +64,8 @@ class ProductPageState extends State<ProductPageT02> {
       BottomNavigationBarItem(
           icon: Icon(Icons.home), title: Text('Propiedad')),
       BottomNavigationBarItem(
+          icon: Icon(Icons.iso), title: Text('Calculadora')),
+      BottomNavigationBarItem(
           icon: Icon(Icons.map), title: Text('Ubicación'))
     ],
   );
@@ -71,6 +74,8 @@ class ProductPageState extends State<ProductPageT02> {
     switch (currentIndex) {
       case 0:
         return TerrainPage02();
+      case 1:
+        return MyHomePage();
       case 1:
         return MapGeolocationT02();
       default:
