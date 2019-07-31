@@ -43,8 +43,8 @@ class MenuPage extends StatelessWidget {
     children: [
       TableRow(
         children: [
-          _makeBottom(Icons.directions_car, Colors.brown, 'Vehículos', context, "/listCar"),
-          _makeBottom(Icons.home, Colors.green, 'Propiedades', context, "/listTerrain"),
+          _makeBottom(Icons.directions_car, Color.fromRGBO(100, 26, 107,1), 'Vehículos', context, "/listCar"),
+          _makeBottom(Icons.home, Color.fromRGBO(100, 26, 107,1), 'Propiedades', context, "/listTerrain"),
         ],
       ),
     ],
@@ -127,7 +127,7 @@ class MenuPage extends StatelessWidget {
            SizedBox(height: 2.0),
            Text('Compra       	  Venta', style: TextStyle(color: Colors.white, fontSize: 20.0)),
            SizedBox(height: 2.0),
-           Text('    581.72            588.06  ', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+           Text('    574.89            583.23  ', style: TextStyle(color: Colors.white, fontSize: 20.0)),
         ],
       ),
     )
