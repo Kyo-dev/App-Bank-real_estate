@@ -2,13 +2,14 @@ import 'package:app_bank_bienes/src/bloc/scans.dart';
 import 'package:app_bank_bienes/src/models/scan_model.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
 // import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
-import 'package:app_bank_bienes/src/pages/mapGeolocationT02.dart';
+
+import 'package:app_bank_bienes/src/pages/notification.dart';
 import 'package:app_bank_bienes/src/pages/template/templateCalc.dart';
 import 'package:app_bank_bienes/src/pages/terrain_pages02.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
 
 import 'package:qrcode_reader/qrcode_reader.dart';
 import 'package:share/share.dart';
@@ -78,7 +79,7 @@ class ProductPageState extends State<ProductPageT02> {
       case 1:
         return MyHomePage();
       case 2:
-        return MapGeolocationT02();
+        return LocalNotificationWidget();
       default:
         return CalculatorPage();
     }
@@ -108,28 +109,4 @@ class ProductPageState extends State<ProductPageT02> {
       util.openScan(context, scan);
     }
   }
-  Widget notification(){
-    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
-// initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
-var initializationSettingsAndroid =
-    new AndroidInitializationSettings('app_icon');
-var initializationSettingsIOS = new IOSInitializationSettings(
-    onDidReceiveLocalNotification: onDidReceiveLocalNotification);
-var initializationSettings = new InitializationSettings(
-    initializationSettingsAndroid, initializationSettingsIOS);
-flutterLocalNotificationsPlugin.initialize(initializationSettings,
-    onSelectNotification: onSelectNotification);
-  }
-  
-Future onSelectNotification(String payload) async {
-    if (payload != null) {
-      debugPrint('notification payload: ' + payload);
-    }
-    await Navigator.push(
-      context,
-      new MaterialPageRoute(builder: (context) => new SecondScreen(payload)),
-    );
-}
-
-
-}
+ }

@@ -31,9 +31,9 @@ class MenuPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Text('Banco Bienes', style:TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
+          Text('Banco Bienes', style:TextStyle(color: Colors.purple, fontSize: 30.0, fontWeight: FontWeight.bold)),
           SizedBox(height: 1.0),
-          Text('Menú principal', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+          Text('Menú principal', style: TextStyle(color: Colors.deepPurple, fontSize: 20.0)),
         ],
       ),
     )
