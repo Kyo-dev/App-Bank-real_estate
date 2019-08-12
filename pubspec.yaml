@@ -33,7 +33,8 @@ dependencies:
   dropdownfield: ^0.0.2
   gradient_widgets: ^0.4.1
   math_expressions: ^1.0.0
-  
+  flutter_local_notifications: ^0.8.1
+
 
 dev_dependencies:
   flutter_test:

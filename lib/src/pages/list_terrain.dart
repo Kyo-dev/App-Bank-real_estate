@@ -28,7 +28,7 @@ Widget listItems(BuildContext context) => ListView(
       ),
       Divider(),
       ListTile(
-        title: Text('Volkswagen' ,style: TextStyle(fontSize: 25.0, color: Colors.black)),
+        title: Text('Terreno vacio' ,style: TextStyle(fontSize: 25.0, color: Colors.black)),
         subtitle: Text('45.000\$' ,style: TextStyle(fontSize: 20.0, color: Colors.black)),
         trailing: Icon(Icons.keyboard_arrow_right, color: Theme.of(context).primaryColor),
          onTap: (){

@@ -1,5 +1,5 @@
 import 'package:app_bank_bienes/src/bloc/scans.dart';
-// import 'package:app_bank_bienes/src/models/scan_model.dart';
+import 'package:app_bank_bienes/src/models/scan_model.dart';
 import 'package:app_bank_bienes/src/pages/calculator.dart';
 // import 'package:app_bank_bienes/src/pages/mapGeolocation.dart';
 import 'package:app_bank_bienes/src/pages/mapGeolocationT02.dart';
@@ -7,9 +7,10 @@ import 'package:app_bank_bienes/src/pages/template/templateCalc.dart';
 import 'package:app_bank_bienes/src/pages/terrain_pages02.dart';
 import 'package:flutter/material.dart';
 
-// import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
+import 'package:app_bank_bienes/src/utils/scan_utils.dart' as util;
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-// import 'package:qrcode_reader/qrcode_reader.dart';
+import 'package:qrcode_reader/qrcode_reader.dart';
 import 'package:share/share.dart';
 
 class ProductPageT02 extends StatefulWidget {
@@ -40,11 +41,11 @@ class ProductPageState extends State<ProductPageT02> {
           body: _callPage(currendIndex),
           bottomNavigationBar: _bottomNavigationBar(),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          // floatingActionButton: FloatingActionButton(
-          //   child: Icon(Icons.filter_center_focus),
-          //   onPressed: ()=> _scanQR(context),
-          //   backgroundColor: Theme.of(context).primaryColor,
-          // ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.filter_center_focus),
+            onPressed: ()=> _scanQR(context),
+            backgroundColor: Theme.of(context).primaryColor,
+          ),
           // floatingActionButton: FloatingActionButton(
           //  child:  Icon(Icons.iso),
           //   onPressed: ()=> {},
@@ -76,36 +77,59 @@ class ProductPageState extends State<ProductPageT02> {
         return TerrainPage02();
       case 1:
         return MyHomePage();
-      case 1:
+      case 2:
         return MapGeolocationT02();
       default:
         return CalculatorPage();
     }
   }
 
-//   _scanQR(BuildContext context) async {
-// // https://github.com/lKyoto
-// // geo:34.98204841631348,135.7508717493164
-//     String futureString;
+  _scanQR(BuildContext context) async {
+// https://github.com/lKyoto
+// geo:34.98204841631348,135.7508717493164
+    String futureString;
     
-//     try {
-//       futureString = await new QRCodeReader().scan();
-//     } catch (e) {
-//       futureString = e.toString();
-//     }
-//     print('futureString: $futureString');
+    try {
+      futureString = await new QRCodeReader().scan();
+    } catch (e) {
+      futureString = e.toString();
+    }
+    print('futureString: $futureString');
 
-//     if(futureString != null){
-//       // DBbank.db.insertScan(scan);
-//       final scan = ScanModel(value: futureString);
-//       scansBloc.addScan(scan);
+    if(futureString != null){
+      // DBbank.db.insertScan(scan);
+      final scan = ScanModel(value: futureString);
+      scansBloc.addScan(scan);
 
 
-//       // final scan2 = ScanModel(value: 'geo:34.98204841631348,135.7508717493164');
-//       // scansBloc.addScan(scan2);
+      // final scan2 = ScanModel(value: 'geo:34.98204841631348,135.7508717493164');
+      // scansBloc.addScan(scan2);
 
-//       util.openScan(context, scan);
-//     }
-//   }
+      util.openScan(context, scan);
+    }
+  }
+  Widget notification(){
+    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
+// initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
+var initializationSettingsAndroid =
+    new AndroidInitializationSettings('app_icon');
+var initializationSettingsIOS = new IOSInitializationSettings(
+    onDidReceiveLocalNotification: onDidReceiveLocalNotification);
+var initializationSettings = new InitializationSettings(
+    initializationSettingsAndroid, initializationSettingsIOS);
+flutterLocalNotificationsPlugin.initialize(initializationSettings,
+    onSelectNotification: onSelectNotification);
+  }
+  
+Future onSelectNotification(String payload) async {
+    if (payload != null) {
+      debugPrint('notification payload: ' + payload);
+    }
+    await Navigator.push(
+      context,
+      new MaterialPageRoute(builder: (context) => new SecondScreen(payload)),
+    );
+}
+
 
 }

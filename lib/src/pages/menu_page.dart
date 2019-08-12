@@ -89,7 +89,7 @@ class MenuPage extends StatelessWidget {
   );
 
   Widget _carousel() => SizedBox(
-     height: 200.0,
+    height: 200.0,
     width: 340.0,
     child: Carousel(
       images: [

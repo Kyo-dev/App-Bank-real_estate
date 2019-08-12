@@ -23,7 +23,7 @@ class MapGeolocationT02 extends StatelessWidget {
             child: Text('No hay registros'),
           );
         }
-        return ListView.builder(
+       return ListView.builder(
           itemCount: 1,
           itemBuilder: (context, i) => Dismissible(
             key: UniqueKey(),
@@ -31,10 +31,10 @@ class MapGeolocationT02 extends StatelessWidget {
             onDismissed: (direction) => scansBloc.deleteScans(res[i].id),
             child: ListTile(
               leading: Icon(Icons.cloud_queue, color: Theme.of(context).primaryColor),
-              title: Text(res[8].value),
+              title: Text(res[3].value),
               // subtitle: Text('ID: ${res[i].id}'),
               trailing: Icon(Icons.keyboard_arrow_right, color: Theme.of(context).primaryColor),
-              onTap: () => util.openScan(context , res[8]),
+              onTap: () => util.openScan(context , res[3]),
             )
           ),
         );

@@ -60,12 +60,12 @@ class _TemplateClass{
         baseColor,
         Positioned(
           top: -200,
-          left: -50,
+          left: 150,
           child: boxD1
         ),
         Positioned(
-          top: 480,
-          left: 200,
+          top: 500,
+          left: -100,
           child: boxD2,
         )
       ],
