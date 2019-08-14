@@ -3,27 +3,30 @@
     "routes": [
         {
             "route": "listCar",
+            "url": "https://cdn.motor1.com/images/mgl/XVw3p/s1/maserati-grancabrio-by-pogea-racing.jpg",
             "text":"Car",
-            "title": "Maserati 01",
+            "title": "Maserati Grancabrio",
             "subTitle":"Dos puertas descapotable",
-            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs",
-            "price": 10000
+            "description": "Nuevo del año, descapotable, color oscuro, 2 puertas, interior comodo y espacioso.",
+            "price": 308.000
         },
         {
             "route": "listCar",
+            "url": "https://lanota-latina.com/wp-content/uploads/2016/09/Carros-en-venta-en-Florida-800x500_c.jpg",
             "text":"Car",
-            "title": "Maserati 01",
+            "title": "Toyota",
             "subTitle":"Dos puertas descapotable",
-            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs",
-            "price": 10000
+            "description": "Cuatro puertas, 4x4, color azul oscuro, modelo 2001 precion negociable",
+            "price": 2.900
         },
         {
             "route": "listCar",
+            "url": "http://www.veoautos.cl/wp-content/uploads/2018/08/Escarabajo-3-1.jpg",
             "text":"Car",
-            "title": "Maserati 01",
+            "title": "Volkswagen tipo 1",
             "subTitle":"Dos puertas descapotable",
-            "description": "kskfs dfksd jfskdfsks ksdfisdfsdkusdkf sdifeus si sdfs",
-            "price": 10000
+            "description": "En venta Volkswagen tipo 1, puntura e interior renovano",
+            "price": 22.500
         }   
     ]    
 }
